@@ -3,3 +3,8 @@
     become: true
     roles:
       - role: docker
+    tasks:
+      - name:  Add default vagrant user in docker group
+        user: 
+          name: vagrant
+          groups: docker

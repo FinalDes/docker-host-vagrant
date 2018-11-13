@@ -3,9 +3,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu18.04.1"
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  # config.vm.synced_folder "./dist/", "/home/vagrant/site",
-    # type: "nfs",
-    # nfs_version: 3
   config.vm.synced_folder "./provision/", "/vagrant/provision",
     type: "nfs",
     nfs_version: 3
@@ -17,5 +14,6 @@ Vagrant.configure("2") do |config|
   end
   config.vm.provision :ansible_local do |ansible|
     ansible.playbook = "provision/playbook.yml"
+    ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
   end
 end

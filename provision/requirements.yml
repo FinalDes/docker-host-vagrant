@@ -1,0 +1,4 @@
+- name: docker
+  src: git+https://github.com/FinalDes/ansible-docker/
+  scm: git
+  version: master

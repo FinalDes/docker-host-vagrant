@@ -1,4 +1,4 @@
-- name: docker
+- name: docker-ce
   src: git+https://github.com/FinalDes/ansible-docker/
   scm: git
   version: master

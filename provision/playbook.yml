@@ -2,7 +2,8 @@
   - hosts: all
     become: true
     roles:
-      - role: docker
+      - role: docker-ce
+        channel: stable
     tasks:
       - name:  Add default vagrant user in docker group
         user: 
